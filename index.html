@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>Biblioteca de links de salud</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&family=Young+Serif&display=swap">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f2f6f7;--card:#fff;--ink:#14233b;--mute:#5b6b7d;--line:#d9e2e7;--acc:#0e7c86;--accink:#fff;--tl:87%;color-scheme:light}
+:root[data-theme="light"]{--bg:#f2f6f7;--card:#fff;--ink:#14233b;--mute:#5b6b7d;--line:#d9e2e7;--acc:#0e7c86;--accink:#fff;--tl:87%;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]):not([data-theme="dark"]){--bg:#0f1a26;--card:#17273a;--ink:#e8eef3;--mute:#9fb0c0;--line:#274058;--acc:#4cc3cc;--accink:#0f1a26;--tl:26%;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#11151a;--card:#1d232a;--ink:#f4f1ed;--mute:#b8b9bd;--line:#343b44;--acc:#e05b4f;--accink:#fff;--tl:18%;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html,body{min-height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Figtree,system-ui,sans-serif;transition:background-color .2s,color .2s}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:var(--bg);pointer-events:none}
+:root[data-theme="dark"] body{background-color:#11151a}
+:root[data-theme="dark"] .card,:root[data-theme="dark"] details,:root[data-theme="dark"] .theme-toggle{box-shadow:0 8px 28px rgba(0,0,0,.18)}
+:root[data-theme="dark"] .theme-toggle:hover,:root[data-theme="dark"] .chip[aria-pressed=true]{border-color:#ff776b}
+:root[data-theme="dark"] h1{color:#fff}
+:root[data-theme="dark"] h2{color:#ff776b}
+main{max-width:1000px;margin:0 auto;padding:24px 16px 48px}
+.title-row{display:flex;align-items:center;justify-content:space-between;gap:16px}
+h1{font:400 clamp(28px,6vw,44px)/1.1 "Young Serif",Georgia,serif;margin:0 0 6px}
+.theme-toggle{flex:none;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:var(--card);color:var(--ink);cursor:pointer;font-size:20px}
+.theme-toggle:hover{border-color:var(--acc)}
+.sub{color:var(--mute);margin:0 0 6px}
+#prog{color:var(--mute);font-size:14px;margin:0 0 18px}
+input,select,button{font:inherit;color:var(--ink)}
+input[type=search],input[type=text],input[type=url],select{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:9px 11px;min-width:0}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.bar input[type=search]{flex:1 1 200px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:8px}
+.chip{flex:none;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--acc);color:var(--accink);border-color:var(--acc)}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+h2{font:400 22px "Young Serif",Georgia,serif;margin:28px 0 4px}
+.cd{color:var(--mute);font-size:14px;margin:0 0 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card.read{opacity:.65}
+.card a{color:inherit;text-decoration:none;display:block;flex:1}
+.tile{height:110px;display:flex;flex-direction:column;gap:2px;align-items:center;justify-content:center;background:hsl(var(--h) 45% var(--tl))}
+.tile .em{font-size:38px;line-height:1}
+.tile .hn{font-size:13px;color:var(--mute)}
+.tile img{width:100%;height:100%;object-fit:cover;display:block}
+.body{padding:12px 14px 8px}
+.t{font-weight:600;line-height:1.25}
+.meta{color:var(--mute);font-size:14px;margin-top:4px;overflow-wrap:anywhere}
+.d{font-size:14px;margin-top:8px}
+.w{font-size:14px;margin-top:6px;color:var(--mute)}
+.rd{border:0;border-top:1px solid var(--line);background:none;padding:9px 14px;text-align:left;cursor:pointer;color:var(--mute);font-size:14px}
+.rd[aria-pressed=true]{color:var(--acc);font-weight:600}
+.del{position:absolute;top:6px;right:6px;border:0;background:var(--card);border-radius:50%;width:28px;height:28px;cursor:pointer;opacity:.9}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:600}
+details ol{margin:10px 0 0;padding-left:20px}
+details li{margin-bottom:6px}
+form{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:12px}
+form label{display:grid;gap:4px;font-size:14px;color:var(--mute)}
+form .full{grid-column:1/-1}
+.go{background:var(--acc);color:var(--accink);border:0;border-radius:8px;padding:10px 16px;font-weight:600;cursor:pointer}
+.empty{color:var(--mute);padding:24px;text-align:center;border:1px dashed var(--line);border-radius:12px}
+</style></head>
+<body><main>
+<div class="title-row">
+<h1>Biblioteca de links de salud</h1>
+<button class="theme-toggle" id="theme-toggle" type="button" aria-label="Cambiar tema" title="Cambiar tema">◐</button>
+</div>
+<p class="sub">Sitios, revistas, blogs y newsletters para aprender lenguaje clínico y mantenerte al día.</p>
+<p id="prog"></p>
+
+<details><summary>Cómo aprovechar la lectura</summary>
+<ol>
+<li><strong>Armá tu diccionario clínico personal.</strong> Dividilo en prefijos y sufijos (-itis, olig-, dys-), sintomatología (disnea, diaforesis, parestesia) y abreviaturas comunes.</li>
+<li><strong>Practicá la traducción técnico ↔ coloquial.</strong> Cada vez que leas un término (cianosis distal), pensá cómo se lo explicarías a un familiar: «coloración azulada en las yemas de los dedos por falta de oxigenación».</li>
+<li><strong>Leé las conclusiones en voz alta.</strong> Te ayuda con la pronunciación y la fluidez para los pases de guardia o los exámenes orales.</li>
+</ol></details>
+
+<details id="add"><summary>Agregar un link</summary>
+<form id="f">
+<label class="full">Dirección (URL)<input type="url" id="u" required placeholder="https://…"></label>
+<label>Título<input type="text" id="ti" required></label>
+<label>Temática<input type="text" id="ca" list="cats" required placeholder="Ej.: Nutrición"></label>
+<datalist id="cats"></datalist>
+<label>Tipo<select id="ty"><option>Sitio</option><option>Revista</option><option>Artículo</option><option>Newsletter</option><option>Blog</option></select></label>
+<label>Nivel<select id="lv"><option value="">Sin nivel</option><option>Entrada</option><option>Intermedio</option><option>Avanzado</option></select></label>
+<label>Imagen (opcional)<input type="file" id="im" accept="image/*"></label>
+<label class="full">Descripción (opcional)<input type="text" id="de"></label>
+<div class="full"><button class="go" type="submit">Guardar link</button></div>
+</form></details>
+
+<div class="bar">
+<input type="search" id="q" placeholder="Buscar por título, sitio o descripción" aria-label="Buscar">
+<select id="tf" aria-label="Filtrar por tipo"><option value="">Todos los tipos</option><option>Sitio</option><option>Revista</option><option>Artículo</option><option>Newsletter</option><option>Blog</option></select>
+<select id="lf" aria-label="Filtrar por nivel"><option value="">Todos los niveles</option><option>Entrada</option><option>Intermedio</option><option>Avanzado</option></select>
+<select id="rf" aria-label="Filtrar por lectura"><option value="">Leídos y pendientes</option><option value="p">Solo pendientes</option><option value="l">Solo leídos</option></select>
+</div>
+<div class="chips" id="chips"></div>
+<div id="out"></div>
+</main>
+<script>
+var THEME_KEY='biblioteca-salud-theme';
+var themeToggle=document.getElementById('theme-toggle');
+function savedTheme(){try{return localStorage.getItem(THEME_KEY)}catch(e){return null}}
+function applyTheme(theme){document.documentElement.dataset.theme=theme;themeToggle.setAttribute('aria-label',theme==='dark'?'Cambiar a modo claro':'Cambiar a modo oscuro')}
+var theme=savedTheme() || (window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+applyTheme(theme);
+themeToggle.addEventListener('click',function(){theme=theme==='dark'?'light':'dark';applyTheme(theme);try{localStorage.setItem(THEME_KEY,theme)}catch(e){}});
+var KEY='biblioteca-salud-v3',RK='biblioteca-salud-leidos-v2';
+var ORDER=['Divulgación y salud pública','Revistas de enfermería y clínicas','Portales médicos de referencia','Blogs de procedimientos','Actualidad y newsletters','Vocabulario y diccionarios','Diagnósticos y evidencia en enfermería','Búsqueda de literatura científica','Argentina: guías y normativas'];
+var EMO={'Divulgación y salud pública':'📖','Revistas de enfermería y clínicas':'📰','Portales médicos de referencia':'🏥','Blogs de procedimientos':'✍️','Actualidad y newsletters':'📬','Vocabulario y diccionarios':'🔤','Diagnósticos y evidencia en enfermería':'🗂️','Búsqueda de literatura científica':'🔎','Argentina: guías y normativas':'🇦🇷'};
+var CD={'Divulgación y salud pública':'Para acostumbrar el ojo al vocabulario clínico en un formato narrativo y fácil de digerir.',
+'Revistas de enfermería y clínicas':'La terminología real del ámbito hospitalario: planes de cuidados (PAE), notas de enfermería y estudios de caso.',
+'Portales médicos de referencia':'Lenguaje médico riguroso y casos de estudio para el día a día.',
+'Blogs de procedimientos':'Guías paso a paso para aprender técnicas, cuidados y términos clínicos en contexto.',
+'Actualidad y newsletters':'Novedades del sector, investigaciones y alertas epidemiológicas.',
+'Vocabulario y diccionarios':'Para armar tu diccionario clínico personal y chequear términos.',
+'Diagnósticos y evidencia en enfermería':'Taxonomías NANDA, NIC y NOC, y evidencia para fundamentar los cuidados.',
+'Búsqueda de literatura científica':'Para llegar a revisiones y artículos originales cuando el tema lo requiere.',
+'Argentina: guías y normativas':'Protocolos oficiales y regulación, con la terminología de tu país.'};
+var seed=[
+{u:'https://medlineplus.gov/spanish/',ti:'MedlinePlus en español',ca:ORDER[0],ty:'Sitio',lv:'Entrada',de:'Artículos de la Biblioteca Nacional de Medicina de EE. UU. sobre enfermedades, fármacos y procedimientos, en lenguaje accesible y con rigor profesional.',w:'Por qué leerlo: te enseña a explicar conceptos complejos con palabras sencillas, clave para educar al paciente.'},
+{u:'https://www.paho.org/es',ti:'OPS: Organización Panamericana de la Salud',ca:ORDER[0],ty:'Sitio',lv:'Entrada',de:'Informes sobre brotes, vacunación y patologías prevalentes, con lenguaje técnico institucional.',w:'Por qué leerlo: incorpora términos de salud comunitaria y epidemiología.'},
+{u:'https://www.argentina.gob.ar/salud/boletin-epidemiologico',ti:'Boletín Epidemiológico Nacional (Argentina)',ca:ORDER[0],ty:'Newsletter',lv:'Entrada',de:'Boletín semanal del Ministerio de Salud de la Nación sobre vigilancia de eventos de notificación obligatoria.',w:'Por qué leerlo: lenguaje técnico institucional con datos reales del país.'},
+{u:'https://scielo.org',ti:'SciELO',ca:ORDER[1],ty:'Revista',lv:'Intermedio',de:'Biblioteca científica en línea con revistas de enfermería de Iberoamérica.',w:'Qué buscar: filtrá por «Casos clínicos» o «Proceso de Atención de Enfermería (PAE)». Vas a ver valoración, diagnósticos NANDA, intervenciones y evolución del paciente.'},
+{u:'https://revistas.um.es/eglobal',ti:'Enfermería Global',ca:ORDER[1],ty:'Revista',lv:'Intermedio',de:'Revista de enfermería en español, útil para estudios de caso y planes de cuidados.'},
+{u:'https://www.scielo.br/j/rlae/',ti:'Revista Latino-Americana de Enfermagem',ca:ORDER[1],ty:'Revista',lv:'Intermedio',de:'Revista de enfermería con versiones en español.'},
+{u:'https://revistas.udes.edu.co/cuidarte',ti:'Revista Cuidarte',ca:ORDER[1],ty:'Revista',lv:'Intermedio',de:'Revista de enfermería en español con artículos cortos y casos.'},
+{u:'https://www.elsevier.es/es-revista-enfermeria-clinica-35',ti:'Enfermería Clínica (Elsevier)',ca:ORDER[1],ty:'Revista',lv:'Intermedio',de:'Revisiones de procedimientos (vías venosas, curación de heridas, soporte vital) con términos técnicos actualizados.',w:'Tip: buscá los artículos de acceso abierto.'},
+{u:'https://www.rol-enfermeria.com',ti:'Rol de Enfermería',ca:ORDER[1],ty:'Revista',lv:'Intermedio',de:'Revista de enfermería con revisiones de procedimientos y cuidados.'},
+{u:'https://www.intramed.net',ti:'IntraMed',ca:ORDER[2],ty:'Sitio',lv:'Avanzado',de:'Uno de los portales para profesionales de la salud más importantes de Hispanoamérica. Gratuito, con registro simple. Incluye newsletter semanal.',w:'Qué leer: «Casos clínicos», «Artículos destacados» y las secciones de medicina interna y cuidados intensivos.'},
+{u:'https://www.msdmanuals.com/es/professional',ti:'Manual MSD (versión para profesionales)',ca:ORDER[2],ty:'Sitio',lv:'Avanzado',de:'Resúmenes fisiopatológicos, signos, síntomas y tratamientos con lenguaje técnico. Gratis en línea y en app.',w:'Tip: para un procedimiento (vía periférica, estado neurológico) da el paso a paso, hallazgos esperados y complicaciones.'},
+{u:'https://www.enfermeriacreativa.com',ti:'Enfermería Creativa',ca:ORDER[3],ty:'Blog',de:'Blog visual con infografías y artículos cortos: cálculo de dosis y ritmos de goteo, electrocardiogramas, gasometrías y cuidados de vías.',w:'Por qué vale la pena: redacción clara con la terminología técnica de la práctica hospitalaria.'},
+{u:'https://www.enfermeriablog.com',ti:'Enfermería Blog',ca:ORDER[3],ty:'Blog',de:'Artículos por categorías: técnicas, fármacos, diagnósticos NANDA y procedimientos (sondajes, curación de heridas, administración de medicamentos).'},
+{u:'https://espanol.medscape.com',ti:'Medscape en español',ca:ORDER[4],ty:'Newsletter',de:'Noticias médicas globales con newsletter diario o semanal: estudios recientes, aprobaciones de fármacos y guías clínicas.',w:'Probá los «Casos clínicos interactivos» para poner a prueba tu razonamiento antes de ver la solución.'},
+{u:'https://www.enfermeria21.com/diario-dicen/',ti:'Diario Dicen',ca:ORDER[4],ty:'Sitio',de:'Periódico digital exclusivo de enfermería: noticias de la profesión, investigación en cuidados y enfermería basada en la evidencia.'},
+{u:'https://www.mayoclinic.org/es',ti:'Mayo Clinic en español',ca:ORDER[0],ty:'Sitio',lv:'Entrada',de:'Divulgación médica de buen nivel sobre enfermedades, síntomas, pruebas y tratamientos. Complementa a MedlinePlus.',w:'Por qué leerlo: ejemplos claros de términos clínicos explicados en palabras sencillas.'},
+{u:'https://dtme.ranm.es',ti:'Diccionario de términos médicos (RANM)',ca:ORDER[5],ty:'Sitio',lv:'Intermedio',de:'Diccionario gratuito de la Real Academia Nacional de Medicina de España.',w:'Tip: usalo para armar tu diccionario clínico personal.'},
+{u:'https://nanda.org',ti:'NANDA International',ca:ORDER[6],ty:'Sitio',lv:'Intermedio',de:'Sitio oficial de la organización que define los diagnósticos de enfermería NANDA. Parte del contenido es de pago.',w:'Para qué: entender cómo se formulan los diagnósticos de un plan de cuidados.'},
+{u:'https://www.nnnconsult.com',ti:'NNNConsult',ca:ORDER[6],ty:'Sitio',lv:'Intermedio',de:'Consulta de diagnósticos NANDA, intervenciones NIC y resultados NOC relacionados entre sí. Gran parte es de pago.',w:'Tip: consultá si tu institución tiene acceso.'},
+{u:'https://jbi.global',ti:'Instituto Joanna Briggs (JBI)',ca:ORDER[6],ty:'Sitio',lv:'Avanzado',de:'Referencia internacional en enfermería y salud basadas en la evidencia. Está en inglés.'},
+{u:'https://www.cochranelibrary.com/es/',ti:'Biblioteca Cochrane en español',ca:ORDER[7],ty:'Sitio',lv:'Intermedio',de:'Revisiones sistemáticas con resúmenes en lenguaje sencillo, disponibles en español.'},
+{u:'https://bvsalud.org/es/',ti:'BVS / LILACS',ca:ORDER[7],ty:'Sitio',lv:'Intermedio',de:'Biblioteca Virtual en Salud: buscador de literatura científica de Latinoamérica y el Caribe, incluye LILACS.'},
+{u:'https://pubmed.ncbi.nlm.nih.gov',ti:'PubMed',ca:ORDER[7],ty:'Sitio',lv:'Avanzado',de:'Buscador de artículos científicos de la Biblioteca Nacional de Medicina de EE. UU. En inglés.',w:'Tip: usalo cuando necesites llegar al artículo original.'},
+{u:'https://bancos.salud.gob.ar',ti:'Bancos de recursos del Ministerio de Salud de la Nación',ca:ORDER[8],ty:'Sitio',lv:'Intermedio',de:'Guías de práctica clínica, manuales y protocolos oficiales para equipos de salud.',w:'Por qué leerlo: terminología y normas de tu propio país.'},
+{u:'https://www.argentina.gob.ar/anmat',ti:'ANMAT',ca:ORDER[8],ty:'Sitio',lv:'Intermedio',de:'Autoridad regulatoria de medicamentos de Argentina: consulta de productos y alertas sanitarias.'}
+];
+var items=load(),reads=loadReads(),cat='';
+function load(){try{var r=localStorage.getItem(KEY);if(r)return JSON.parse(r)}catch(e){}return seed.map(function(x){return Object.assign({id:x.u},x)})}
+function loadReads(){try{var r=localStorage.getItem(RK);if(r)return JSON.parse(r)}catch(e){}return {}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(items));localStorage.setItem(RK,JSON.stringify(reads))}catch(e){}}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function host(u){try{return new URL(u).hostname.replace(/^www\./,'')}catch(e){return u}}
+function hue(s){var h=0;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))%360;return h}
+function rank(c){var i=ORDER.indexOf(c);return i<0?99:i}
+function card(x){
+var vis=x.img?'<img src="'+x.img+'" alt="">':'<span class="em">'+(EMO[x.ca]||'📌')+'</span><span class="hn">'+esc(host(x.u))+'</span>';
+var rd=!!reads[x.id];
+return '<div class="card'+(rd?' read':'')+'"><a href="'+esc(x.u)+'" target="_blank" rel="noopener noreferrer" aria-label="'+esc(x.ti)+' (se abre en una pestaña nueva)">'+
+'<div class="tile" style="--h:'+hue(x.ca)+'">'+vis+'</div><div class="body"><div class="t">'+esc(x.ti)+'</div>'+
+'<div class="meta">'+esc(x.ty)+(x.lv?' · '+esc(x.lv):'')+'</div>'+(x.de?'<div class="d">'+esc(x.de)+'</div>':'')+(x.w?'<div class="w">'+esc(x.w)+'</div>':'')+'</div></a>'+
+'<button class="rd" data-id="'+esc(x.id)+'" aria-pressed="'+rd+'">'+(rd?'✓ Leído':'Marcar como leído')+'</button>'+
+'<button class="del" data-id="'+esc(x.id)+'" title="Quitar link" aria-label="Quitar '+esc(x.ti)+'">✕</button></div>'}
+function render(){
+var g=function(id){return document.getElementById(id).value};
+var q=g('q').toLowerCase(),tf=g('tf'),lf=g('lf'),rf=g('rf');
+var cats=[];items.forEach(function(x){if(cats.indexOf(x.ca)<0)cats.push(x.ca)});
+cats.sort(function(a,b){return rank(a)-rank(b)||a.localeCompare(b)});
+if(cat&&cats.indexOf(cat)<0)cat='';
+var n=items.filter(function(x){return reads[x.id]}).length;
+document.getElementById('prog').textContent=n+' de '+items.length+' links leídos';
+document.getElementById('chips').innerHTML=['Todas'].concat(cats).map(function(c){
+var k=c==='Todas'?items.length:items.filter(function(x){return x.ca===c}).length;
+return '<button class="chip" data-c="'+(c==='Todas'?'':esc(c))+'" aria-pressed="'+((c==='Todas'?'':c)===cat)+'">'+esc(c)+' ('+k+')</button>'}).join('');
+document.getElementById('cats').innerHTML=cats.map(function(c){return '<option value="'+esc(c)+'">'}).join('');
+var list=items.filter(function(x){
+return (!cat||x.ca===cat)&&(!tf||x.ty===tf)&&(!lf||x.lv===lf)&&(!rf||(rf==='l')===!!reads[x.id])&&
+(!q||(x.ti+' '+host(x.u)+' '+(x.de||'')+' '+(x.w||'')).toLowerCase().indexOf(q)>=0)});
+var out=document.getElementById('out');
+if(!list.length){out.innerHTML='<div class="empty">No hay links para este filtro. Cambiá los filtros o agregá uno nuevo.</div>';return}
+var groups={};list.forEach(function(x){(groups[x.ca]=groups[x.ca]||[]).push(x)});
+out.innerHTML=Object.keys(groups).sort(function(a,b){return rank(a)-rank(b)||a.localeCompare(b)}).map(function(c){
+return '<h2>'+(EMO[c]||'📌')+' '+esc(c)+'</h2>'+(CD[c]?'<p class="cd">'+esc(CD[c])+'</p>':'')+'<div class="grid">'+groups[c].map(card).join('')+'</div>'}).join('')}
+document.getElementById('chips').addEventListener('click',function(e){var b=e.target.closest('.chip');if(b){cat=b.dataset.c;render()}});
+document.getElementById('out').addEventListener('click',function(e){
+var d=e.target.closest('.del'),r=e.target.closest('.rd');
+if(d){items=items.filter(function(x){return x.id!==d.dataset.id});delete reads[d.dataset.id];save();render()}
+else if(r){var id=r.dataset.id;if(reads[id])delete reads[id];else reads[id]=1;save();render()}});
+['q'].forEach(function(i){document.getElementById(i).addEventListener('input',render)});
+['tf','lf','rf'].forEach(function(i){document.getElementById(i).addEventListener('change',render)});
+function shrink(file,cb){var r=new FileReader();r.onload=function(){var i=new Image();i.onload=function(){
+var w=Math.min(480,i.width),h=Math.round(i.height*w/i.width),c=document.createElement('canvas');c.width=w;c.height=h;
+c.getContext('2d').drawImage(i,0,0,w,h);cb(c.toDataURL('image/jpeg',.8))};i.onerror=function(){cb('')};i.src=r.result};r.onerror=function(){cb('')};r.readAsDataURL(file)}
+document.getElementById('f').addEventListener('submit',function(e){
+e.preventDefault();var g=function(id){return document.getElementById(id).value};
+var fin=function(img){items.push({id:'n'+Date.now(),u:g('u').trim(),ti:g('ti').trim(),ca:g('ca').trim(),ty:g('ty'),lv:g('lv'),de:g('de').trim(),img:img});
+save();document.getElementById('f').reset();cat='';render()};
+var f=document.getElementById('im').files[0];if(f)shrink(f,fin);else fin('')});
+render();
+</script></body></html>
